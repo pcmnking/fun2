@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f3ed">
+  <meta name="description" content="林予安的視覺設計作品集，專注品牌識別、數位體驗與藝術指導。">
+  <title>林予安 — 視覺設計師</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f4f3ed;
+      --ink: #20231f;
+      --muted: #777a72;
+      --line: #d8d8cf;
+      --coral: #f05e46;
+      --lime: #d7ed75;
+      --serif: "Noto Serif TC", Georgia, serif;
+      --sans: "DM Sans", "Noto Sans TC", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; }
+    .wrap { width: min(1180px, calc(100% - 72px)); margin-inline: auto; }
+
+    .topbar {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+    }
+    .brand { display: flex; align-items: center; gap: 11px; font-size: 13px; font-weight: 700; }
+    .brand-mark {
+      width: 31px; aspect-ratio: 1; display: grid; place-items: center;
+      background: var(--coral); color: white; font-size: 11px; letter-spacing: 0;
+    }
+    .nav { display: flex; align-items: center; gap: 35px; font-size: 12px; font-weight: 600; }
+    .nav a { transition: color .2s ease; }
+    .nav a:hover, .text-link:hover { color: var(--coral); }
+    .nav .contact-link { border-bottom: 1px solid var(--ink); padding: 8px 0; }
+
+    .hero {
+      min-height: 625px;
+      display: grid;
+      grid-template-columns: 1.03fr .97fr;
+      align-items: center;
+      gap: 72px;
+      padding-block: 74px 84px;
+    }
+    .eyebrow { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: .08em; }
+    .status-dot { width: 8px; aspect-ratio: 1; border-radius: 50%; background: #87a833; box-shadow: 0 0 0 4px #87a83320; }
+    h1 {
+      margin: 30px 0 22px;
+      font-family: var(--serif);
+      font-size: clamp(42px, 5.2vw, 70px);
+      font-weight: 900;
+      line-height: 1.32;
+      letter-spacing: 0;
+    }
+    h1 span { color: var(--coral); }
+    .hero-copy { max-width: 430px; margin: 0; color: #64675f; font-size: 14px; line-height: 2; }
+    .hero-actions { display: flex; align-items: center; gap: 27px; margin-top: 34px; }
+    .button {
+      min-height: 47px; display: inline-flex; align-items: center; gap: 24px;
+      padding: 0 17px; background: var(--ink); color: white; font-size: 12px; font-weight: 700;
+      transition: background .2s ease, transform .2s ease;
+    }
+    .button:hover { background: var(--coral); transform: translateY(-2px); }
+    .text-link { font-size: 12px; font-weight: 700; transition: color .2s ease; }
+    .arrow { font-size: 16px; line-height: 1; }
+    .hero-visual { position: relative; max-width: 470px; width: 100%; justify-self: end; padding: 0 24px 24px 0; }
+    .hero-visual::before { content: ""; position: absolute; z-index: -1; right: 0; bottom: 0; width: 67%; height: 72%; background: var(--lime); }
+    .hero-visual img { height: 424px; object-fit: cover; object-position: center 38%; filter: saturate(.78); }
+    .image-caption { position: absolute; bottom: 0; left: 0; padding: 10px 13px; background: var(--paper); font-size: 10px; font-weight: 600; }
+    .vertical-note { position: absolute; right: -25px; top: 16px; writing-mode: vertical-rl; color: var(--muted); font-size: 10px; letter-spacing: .08em; }
+
+    .section-heading { display: flex; justify-content: space-between; align-items: end; padding: 25px 0 24px; border-top: 1px solid var(--line); }
+    .section-kicker { margin: 0 0 8px; color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    h2 { margin: 0; font-family: var(--serif); font-size: 30px; font-weight: 700; letter-spacing: 0; }
+    .all-work { padding-bottom: 4px; font-size: 11px; font-weight: 700; border-bottom: 1px solid var(--ink); }
+    .projects { display: grid; grid-template-columns: 1.05fr .95fr; gap: 54px 30px; padding-bottom: 100px; }
+    .project:nth-child(even) { margin-top: 80px; }
+    .project-image { position: relative; overflow: hidden; background: #e4e3db; }
+    .project-image img { height: 330px; object-fit: cover; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+    .project:hover .project-image img { transform: scale(1.035); }
+    .project:nth-child(2) .project-image img { height: 290px; }
+    .project:nth-child(3) .project-image img { height: 285px; }
+    .project:nth-child(4) .project-image img { height: 330px; }
+    .project-number { position: absolute; top: 13px; left: 13px; padding: 7px 9px; background: var(--paper); font-size: 10px; font-weight: 700; }
+    .project-meta { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 14px; }
+    .project h3 { margin: 0; font-family: var(--serif); font-size: 18px; font-weight: 700; }
+    .project-type { color: var(--muted); font-size: 10px; }
+
+    .about {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+      padding: 74px 0 82px; border-top: 1px solid var(--line);
+    }
+    .about h2 { max-width: 430px; font-size: 37px; line-height: 1.55; }
+    .about h2 span { color: var(--coral); }
+    .about-copy { align-self: end; max-width: 450px; color: #64675f; font-size: 13px; line-height: 2; }
+    .about-copy p { margin: 0 0 15px; }
+    .skills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .skills span { border: 1px solid var(--line); padding: 7px 10px; color: var(--ink); font-size: 10px; }
+
+    .contact {
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+      padding: 36px 0 40px; border-top: 1px solid var(--line);
+    }
+    .contact h2 { margin-bottom: 8px; font-size: 26px; }
+    .contact p { margin: 0; color: var(--muted); font-size: 11px; }
+    .contact .button { background: var(--coral); }
+    .contact .button:hover { background: var(--ink); }
+    footer { border-top: 1px solid var(--line); }
+    .footer-inner { min-height: 62px; display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 10px; }
+    .socials { display: flex; gap: 20px; color: var(--ink); font-weight: 600; }
+
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 40px, 540px); }
+      .topbar { min-height: 68px; }
+      .nav { gap: 17px; font-size: 11px; }
+      .nav a:nth-child(2) { display: none; }
+      .hero { min-height: 0; grid-template-columns: 1fr; gap: 43px; padding-block: 62px 65px; }
+      h1 { margin-top: 22px; font-size: clamp(42px, 11vw, 60px); }
+      .hero-visual { justify-self: start; width: calc(100% - 15px); max-width: none; }
+      .hero-visual img { height: min(105vw, 430px); }
+      .vertical-note { right: -18px; }
+      .projects { grid-template-columns: 1fr; gap: 36px; padding-bottom: 70px; }
+      .project:nth-child(even) { margin-top: 0; }
+      .project-image img, .project:nth-child(2) .project-image img, .project:nth-child(3) .project-image img, .project:nth-child(4) .project-image img { height: min(68vw, 340px); }
+      .about { grid-template-columns: 1fr; gap: 22px; padding: 55px 0 62px; }
+      .about h2 { font-size: 30px; }
+      .contact { align-items: flex-start; flex-direction: column; padding-block: 30px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; justify-content: center; gap: 13px; padding-block: 18px; }
+    }
+    @media (max-width: 390px) {
+      .wrap { width: calc(100% - 32px); }
+      .nav { gap: 12px; }
+      .hero-actions { gap: 18px; }
+      .button { gap: 15px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap topbar">
+    <a class="brand" href="#home" aria-label="林予安首頁"><span class="brand-mark">YA</span><span>林予安　視覺設計師</span></a>
+    <nav class="nav" aria-label="主要導覽">
+      <a href="#work">作品</a>
+      <a href="#about">關於</a>
+      <a class="contact-link" href="#contact">聯絡我 <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="wrap hero" id="home">
+      <div class="hero-content">
+        <div class="eyebrow"><span class="status-dot" aria-hidden="true"></span> FREELANCE DESIGNER · TAIPEI</div>
+        <h1>讓好點子<br>成為<span>好設計。</span></h1>
+        <p class="hero-copy">嗨，我是予安。透過清晰的策略與大膽的視覺，為品牌打造有溫度、也有記憶點的體驗。</p>
+        <div class="hero-actions">
+          <a class="button" href="#work">看看我的作品 <span class="arrow" aria-hidden="true">↘</span></a>
+          <a class="text-link" href="mailto:hello@yuanlin.design">聊聊合作 <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&amp;fit=crop&amp;w=1100&amp;q=85" alt="自然光下的人像攝影" fetchpriority="high">
+        <span class="image-caption">林予安 / YU-AN LIN</span>
+        <span class="vertical-note">IDEAS MADE VISIBLE — 2026</span>
+      </div>
+    </section>
+
+    <section class="wrap" id="work">
+      <div class="section-heading">
+        <div><p class="section-kicker">SELECTED WORKS · 2022—2025</p><h2>精選作品</h2></div>
+        <a class="all-work" href="mailto:hello@yuanlin.design">索取完整作品集 ↗</a>
+      </div>
+      <div class="projects">
+        <a class="project reveal" href="#contact">
+          <div class="project-image"><img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&amp;fit=crop&amp;w=1100&amp;q=85" alt="以流動色彩呈現的品牌視覺" loading="lazy"><span class="project-number">01</span></div>
+          <div class="project-meta"><h3>好日子 Good Days</h3><span class="project-type">品牌識別 · 2025</span></div>
+        </a>
+        <a class="project reveal" href="#contact">
+          <div class="project-image"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=1100&amp;q=85" alt="山海之間的旅行目的地影像" loading="lazy"><span class="project-number">02</span></div>
+          <div class="project-meta"><h3>島嶼之間</h3><span class="project-type">旅遊企劃 · 2024</span></div>
+        </a>
+        <a class="project reveal" href="#contact">
+          <div class="project-image"><img src="https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&amp;fit=crop&amp;w=1100&amp;q=85" alt="色彩鮮明的抽象藝術作品" loading="lazy"><span class="project-number">03</span></div>
+          <div class="project-meta"><h3>留白之間</h3><span class="project-type">展覽主視覺 · 2024</span></div>
+        </a>
+        <a class="project reveal" href="#contact">
+          <div class="project-image"><img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&amp;fit=crop&amp;w=1100&amp;q=85" alt="以自然材質打造的生活空間" loading="lazy"><span class="project-number">04</span></div>
+          <div class="project-meta"><h3>日常研究所</h3><span class="project-type">數位體驗 · 2023</span></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="wrap about" id="about">
+      <div><p class="section-kicker">A LITTLE ABOUT ME</p><h2>設計不只要好看，<br>更要<span>剛剛好。</span></h2></div>
+      <div class="about-copy">
+        <p>我是一位來自台北的獨立視覺設計師，喜歡從日常細節裡找到靈感。從品牌定位、視覺識別到數位介面，我相信好的設計能讓複雜的事變簡單，也讓平凡的事變得值得記住。</p>
+        <p>目前開放 2026 年品牌與數位專案合作。</p>
+        <div class="skills"><span>品牌識別</span><span>藝術指導</span><span>UI / 網頁設計</span><span>編輯設計</span></div>
+      </div>
+    </section>
+
+    <section class="wrap contact" id="contact">
+      <div><h2>有個好點子嗎？</h2><p>從一句問候開始，說不定會長成很棒的作品。</p></div>
+      <a class="button" href="mailto:hello@yuanlin.design">hello@yuanlin.design <span class="arrow" aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+
+  <footer><div class="wrap footer-inner"><span>© <span id="year">2025</span> 林予安 — 用心設計，慢慢生活。</span><div class="socials"><a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram ↗</a><a href="mailto:hello@yuanlin.design">Email ↗</a></div></div></footer>
+  <script>
+    document.querySelector("#year").textContent = new Date().getFullYear();
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach((item) => revealObserver.observe(item));
+  </script>
+</body>
+</html>
